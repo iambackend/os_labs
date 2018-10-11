@@ -1,0 +1,4 @@
+We have 16 bits for addressing to virtual addressing. Page is 8KB = 2^13 bytes.
+To be able address each of 8192 bytes we need 13 bits. So we left with 
+16 - 13 = 3 bits for pages addressing. Thus we can have up to 2^3 = 8 pages and
+we need 8 entries in page table to store info about them.
