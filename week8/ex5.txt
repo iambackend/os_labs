@@ -1,0 +1,7 @@
+	Physical address is actual place in physical memory, thus set of physical
+addresses is limited by size of physical memory. Virtual address is partialy
+hardware, partialy software abstraction layer over physical memory and discs,
+which allow to use more space than actually exist in memory, by swapping rarely
+used fragments of memory to discs. Also it is allow to use physical memory more
+efficent because there is no need in looking for big consecutive chunk of 
+space. 
