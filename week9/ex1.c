@@ -53,10 +53,10 @@ int main(int argc, char **argv) {
 			swap_in(memory, ages, n, next_page);
 		}
 		update_ages(memory, ages, n, next_page);
-		for(int i = 0; i < n; i++){
-			printf("%d ", memory[i]);
-		}
-		printf("\n");
+		// for(int i = 0; i < n; i++){
+		// 	printf("%d ", memory[i]);
+		// }
+		// printf("\n");
 	}
 	fclose(file);
 	printf("Hit/Miss ratio: %d/%d = %f\n", hit, miss, (double)hit/miss);
