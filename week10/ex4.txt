@@ -1,0 +1,5 @@
+i-node 8619111246 is used by this files:
+    ..
+    file2
+    link1
+    file1
