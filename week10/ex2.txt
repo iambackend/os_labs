@@ -1,0 +1,6 @@
+file.txt. i-node number:
+8624752097 file.txt
+results of 'find . -inum 8624752097' command:
+./week01/file.txt
+./_ex2.txt
+results after 'find . -inum 8624752097 -exec rm {} \;' command:
