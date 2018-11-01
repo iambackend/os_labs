@@ -1,0 +1,9 @@
+	Since default buffering mode for stdout is line buffering, buffer cleans
+only after newline character is put into buffer.
+	For example in program 1 we put "Hello" in a buffer, then we call fork(),
+so after that we have two processes with same "Hello" in a buffer. And then
+both of this processes put newline character in a buffer and by that trigger
+printing of two "Hello" strings.
+	In program 2 before fork we put in a buffer a newline character, so buffer
+is already empty when we call fork(). Because of this we get one "Hello" and 
+two empty strings.
