@@ -1,0 +1,51 @@
+	For tests I copied file of size about 1,6MB. If I used bigger files nothing
+would changed, because size is significantly bigger than buffer size in program.
+If it was realy small file, than results will be better, but not so interesting,
+because in cases with big buffer size whole file will be copied with just one
+operation.
+	Results:
+
+gcc copy.c -o copy.out -DBUF_SIZE=1
+
+real	0m8.210s
+user	0m1.449s
+sys	0m6.604s
+
+gcc copy.c -o copy.out -DBUF_SIZE=64
+real	0m0.135s
+user	0m0.024s
+sys	0m0.107s
+
+gcc copy.c -o copy.out -DBUF_SIZE=512
+
+real	0m0.029s
+user	0m0.005s
+sys	0m0.021s
+
+gcc copy.c -o copy.out -DBUF_SIZE=1024
+
+real	0m0.017s
+user	0m0.003s
+sys	0m0.011s
+
+gcc copy.c -o copy.out -DBUF_SIZE=8192
+
+real	0m0.017s
+user	0m0.002s
+sys	0m0.006s
+
+gcc copy.c -o copy.out -DBUF_SIZE=64 -DSYNC=1
+real	0m1.595s
+user	0m0.030s
+sys	0m0.880s
+
+gcc copy.c -o copy.out -DBUF_SIZE=1024 -DSYNC=1
+real	0m0.218s
+user	0m0.007s
+sys	0m0.142s
+
+gcc copy.c -o copy.out -DBUF_SIZE=8192 -DSYNC=1
+real	0m0.044s
+user	0m0.003s
+sys	0m0.026s
+
