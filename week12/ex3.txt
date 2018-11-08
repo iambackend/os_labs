@@ -34,18 +34,40 @@ real	0m0.017s
 user	0m0.002s
 sys	0m0.006s
 
-gcc copy.c -o copy.out -DBUF_SIZE=64 -DSYNC=1
+gcc copy.c -o copy.out -DBUF_SIZE=1 -DSYNC
+            
+real	1m43.044s
+user	0m1.976s
+sys	0m57.037s
+
+gcc copy.c -o copy.out -DBUF_SIZE=64 -DSYNC
 real	0m1.595s
 user	0m0.030s
 sys	0m0.880s
 
-gcc copy.c -o copy.out -DBUF_SIZE=1024 -DSYNC=1
+gcc copy.c -o copy.out -DBUF_SIZE=512 -DSYNC
+
+real	0m0.212s
+user	0m0.005s
+sys	0m0.118s
+
+gcc copy.c -o copy.out -DBUF_SIZE=1024 -DSYNC
 real	0m0.218s
 user	0m0.007s
 sys	0m0.142s
 
-gcc copy.c -o copy.out -DBUF_SIZE=8192 -DSYNC=1
+gcc copy.c -o copy.out -DBUF_SIZE=8192 -DSYNC
 real	0m0.044s
 user	0m0.003s
 sys	0m0.026s
 
+
+	As you can see, with small buffer size time required for coping is almost
+lineary depends on buffer size, because I/O operations is very time consuming.
+But with bigger buffer size time number of I/O operations gets so small, so 
+buffer size don't affect computation time much.
+	Turned on syncronisation makes program about 10 times slower in almost all
+cases, because there is no bufffer on lower level used and each I/O call
+causes 'real' I/O operation. But, with big buffer size this effect not so
+significant because all our I/O operations have so many bytes inside, so lower
+level buffer fully fills almost after each call.
