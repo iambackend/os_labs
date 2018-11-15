@@ -1,0 +1,12 @@
+When recovery strategy is good:
+	When operating system is not very sophisticated and deadlocks rarely occur,
+	so we can just ignore such possibility, unless it is alredy happend. For
+	example, it can be some simple cellphone OS, where not so much resources, processes and system is mainly I/O bound. 
+When prevention strategy is good:
+	When system is short on resources and deadlocks occur often, so it is better 
+	stay in safe states. For example, high loaded server.
+When avoidance strategy is good:
+	When system is specificaly designed for some tasks and it's not so hard for
+	us to just add some additional restrictions on it, like requestion all
+	resources on start. For example, some military or space equipment, or 
+	household appliances.
