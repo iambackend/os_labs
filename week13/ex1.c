@@ -18,11 +18,12 @@ int main(int argc, char **argv) {
 			exit(EXIT_FAILURE);
 		}
 	}
-	int e[m];
-	int a[m];
-	int finished[n];
-	int c[n][m];
-	int r[n][m];
+	int e[m]; // I 
+	int a[m]; // HAVE 
+	int finished[n]; // NO
+	int c[n][m]; // IDEA
+	int r[n][m]; // Or i don't understand something about runtime array allocation,
+				 // or it's some kind of dark magic of clang on macos.
 	FILE* input = fopen("input.txt", "r");
 
 	for(int i = 0; i < m; i++) {
